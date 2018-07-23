@@ -1,0 +1,15 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "themeGenerator.colors": {
+        "background": "#493b2a",
+        "foreground": "#fff",
+        "primary": "#593f62",
+        "keywords": "#7b6d8d",
+        "functions": "#8499b1",
+        "strings": "#a5c4d4",
+        "numbers": "#b381c5",
+        "punctuation": "#6a5e50",
+        "operators": "#7b6d8d",
+        "comment": "#6a5e50",
+    }
+}

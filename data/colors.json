@@ -1,0 +1,17 @@
+{
+    "background": "#21282d",
+    "foreground": "#fff",
+    "primary": "#327193",
+    "keywords": "#43baba",
+    "functions": "#3fa5c1",
+    "strings": "#b9ecfa",
+    "numbers": "#8789c0",
+    "punctuation": "#494f53",
+    "operators": "#327193",
+    "comment": "#3d4b54",
+    "tags": "#43baba",
+    "attributes": "#3fa5c1",
+    "properties": "#43baba",
+    "builtins": "#b5ca8d",
+    "variables": "#fff"
+}

@@ -1,0 +1,132 @@
+{
+    "keywords": [
+        "keyword.control.module.js",
+        "storage.type.class.js",
+        "storage.type.extends.js",
+        "storage.type.js",
+
+        "variable.language.this.js",
+
+        "constant.language.boolean.false.js",
+        "constant.language.boolean.true.js",
+
+        "keyword.control.switch.js",
+        "keyword.control.loop.js",
+        "keyword.control.conditional.js",
+        "keyword.control.flow.js",
+
+        "keyword.operator.accessor.js",
+
+        "keyword.other.important.css",
+        "keyword.control.at-rule.media.scss",
+        "entity.name.tag.reference.scss",
+
+        "meta.class.python",
+        "storage.type.function.python",
+        "keyword.control.flow.python"
+    ],
+    "functions": [
+        "entity.name.function.js",
+        "entity.name.function.method.js",
+        "entity.name.function.python"
+    ],
+    "strings": [
+        "string",
+        "string.quoted.module.js",
+        "string.quoted.double.js",
+        "string.quoted.single.js",
+        "string.quoted.template.js",
+        "string.unquoted.js",
+        "string.quoted.double.json.comments",
+        "string.quoted.double.html",
+        "string.quoted.double.css"
+    ],
+    "numbers": [
+        "constant.numeric",
+        "constant.numeric.js",
+        "constant.numeric.css"
+    ],
+    "punctuation": [
+        "punctuation.terminator",
+        "punctuation.separator",
+        "punctuation.parenthesis",
+        "punctuation.definition.string",
+        "meta.brace.curly.litobj.js",
+        "meta.brace.round.js",
+        "meta.brace.curly.js",
+        "meta.delimiter.comma.js",
+        "punctuation.separator.key-value.js",
+        "meta.brace.square.js",
+        "punctuation.definition.tag.jsx",
+        "punctuation.definition.tag.html",
+        "punctuation.section.property-list.end.bracket.curly.css",
+        "punctuation.section.property-list.begin.bracket.curly.css",
+        "punctuation.terminator.rule.css",
+        "punctuation.separator.key-value.css",
+        "punctuation.section.embedded",
+        "punctuation.definition.string.begin.js",
+        "punctuation.definition.string.end.js",
+
+        "punctuation.definition.parameters.begin.python",
+        "punctuation.definition.parameters.end.python",
+        "punctuation.section.function.begin.python",
+        "punctuation.separator.parameters.python",
+        "punctuation.section.class.begin.python",
+        "punctuation.separator.dict.python",
+        "punctuation.definition.arguments.begin.python"
+    ],
+    "operators": [
+        "keyword.operator.comparison",
+        "keyword.operator.arithmetic",
+        "keyword.operator.assignment",
+        "keyword.operator.logical",
+
+        "storage.type.function.arrow.js",
+        "keyword.operator.relational.js",
+        "keyword.operator.ternary.js",
+        "keyword.operator.arithmetic.js",
+        "keyword.operator.assignment.js",
+        "keyword.operator.logical.js",
+        "meta.tag.inline.any.html",
+
+        "keyword.operator.assignment.python",
+        "keyword.operator.arithmetic.python",
+        "keyword.operator.logical.python"
+    ],
+    "comment": [
+        "comment",
+        "punctuation.definition.comment"
+    ],
+    "tags": [
+        "entity.name.tag.open.jsx",
+        "entity.name.tag.close.jsx",
+        "entity.name.tag.structure.any.html",
+        "entity.name.tag.inline.any.html"
+    ],
+    "attributes": [
+        "entity.other.attribute-name",
+        "entity.other.attribute-name.jsx",
+        "entity.other.attribute-name.id.html",
+        "entity.other.attribute-name.html",
+        "entity.other.attribute-name.id.css",
+        "entity.other.attribute-name.class.css"
+    ],
+    "properties": [
+        "support.type.property-name.css",
+        "variable.scss",
+        "support.type.property-name.json",
+        "variable.other.property.js"
+    ],
+    "builtins": [
+        "support.class.builtin.js",
+        "support.type.object.console.js",
+        "support.type.object.dom.js",
+
+        "variable.language.special.self.python",
+        "support.function.builtin.python"
+    ],
+    "variables": [
+        "variable.other.readwrite.js",
+        "variable.other.object.js"
+    ]
+}

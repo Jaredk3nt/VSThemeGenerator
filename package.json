@@ -1,0 +1,39 @@
+{
+    "name": "vsthemegenerator",
+    "displayName": "VSThemeGenerator",
+    "description": "Generate custom code themes quick and easy",
+    "version": "0.0.1",
+    "publisher": "jaredkent",
+    "engines": {
+        "vscode": "^1.25.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.generateTheme"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.generateTheme",
+                "title": "Generate Theme"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "eslint": "^4.11.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "fs": "0.0.1-security"
+    }
+}

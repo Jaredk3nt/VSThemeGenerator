@@ -1,0 +1,22 @@
+{
+    "name": "generatedtheme",
+    "displayName": "Generated Theme",
+    "description": "Custom Generated Theme from the VS Theme Generator",
+    "version": "0.0.1",
+    "publisher": "jaredkent",
+    "engines": {
+        "vscode": "^1.25.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "GeneratedTheme",
+                "uiTheme": "vs-dark",
+                "path": "./themes/generated-color-theme.json"
+            }
+        ]
+    }
+}
