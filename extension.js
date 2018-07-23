@@ -1,17 +1,27 @@
 const vscode = require('vscode');
+const fs = require('fs');
 const { generateColorTheme, writeThemetoFile } = require('./src/generator');
 const defaultColors = require('./data/colors.json');
 const pkg = require('./data/generatedThemePackage.json');
-var fs = require('fs');
+
 
 const directorySetup = () => {
     fs.mkdir(`${process.env['HOME']}/.vscode/extensions/generatedTheme`, (err) => {
-        if (err) return console.log('Failed to create dir generatedTheme/');
+        if (err) {
+            vscode.window.showErrorMessage('Failed to properly create necessary file structure. VSThemeGenerator Requires $HOME/.vscode/extensions/generatedTheme/themes to exist.')
+            return console.log(err.message);
+        }
         fs.writeFile(`${process.env['HOME']}/.vscode/extensions/generatedTheme/package.json`, JSON.stringify(pkg, null, 4), (err) => {
-            if (err) return console.log('Failed to create package.json in dir generatedTheme/');
+            if (err) {
+                vscode.window.showErrorMessage('Failed to properly create necessary file structure. VSThemeGenerator Requires $HOME/.vscode/extensions/generatedTheme/themes to exist.')
+                return console.log(err.message);
+            }
         });
         fs.mkdir(`${process.env['HOME']}/.vscode/extensions/generatedTheme/themes`, (err) => {
-            if (err) return console.log('Failed to create dir generatedTheme/themes');
+            if (err) {
+                vscode.window.showErrorMessage('Failed to properly create necessary file structure. VSThemeGenerator Requires $HOME/.vscode/extensions/generatedTheme/themes to exist.')
+                return console.log(err.message);
+            }
         });
     });
 }
@@ -40,7 +50,6 @@ const getColors = () => {
 
 const generateThemeCmd = () => {
     const colors = getColors();
-    console.log(colors);
     const theme = generateColorTheme(colors);
     writeThemetoFile(theme);
     vscode.window.showInformationMessage('Custom Theme Generated!\nUse by selecting GeneratedTheme from the theme menu and then reloading the window.');

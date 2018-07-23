@@ -1,12 +1,15 @@
+const vscode = require('vscode');
+const fs = require('fs');
 const scopes = require('../data/scopes.json');
-var fs = require('fs');
+
 
 const writeThemetoFile = (theme) => {
     fs.writeFile(`${process.env['HOME']}/.vscode/extensions/generatedTheme/themes/generated-color-theme.json` , JSON.stringify(theme, null, 4), (err) => {
         if(err) {
-            return console.log(err);
+            vscode.window.showErrorMessage('Failed to write theme file.')
+            return console.log(err.message);
         }
-        console.log(`Custom Theme Generated!\n${JSON.stringify(theme, null, 2)}`);
+        console.log(`Custom Theme Generated!`);
     }); 
 }
 
