@@ -1,65 +1,38 @@
-# vsthemegenerator README
+# VS Theme Generator
 
-This is the README for your extension "vsthemegenerator". After writing up a brief description, we recommend including the following sections.
+VS Theme Generator allows you to create your perfect VS Code theme without the hassle of having to create your own extension.
 
-## Features
+## Usage
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Once you have downloaded and installed VSThemeGenerator you will be able to modify your theme by adding the configuration variable `themeGenerator.colors`.
 
-For example if there is an image subfolder under your extension project workspace:
+``` json
+"themeGenerator.colors": {
+    "background": "#21282d",
+    "foreground": "#fff",
+    "primary": "#327193",
+    "keywords": "#43baba",
+    "functions": "#3fa5c1",
+    "strings": "#b9ecfa",
+    "numbers": "#8789c0",
+    "punctuation": "#494f53",
+    "operators": "#327193",
+    "comment": "#3d4b54",
+    "tags": "#43baba",
+    "attributes": "#3fa5c1",
+    "properties": "#43baba",
+    "builtins": "#b5ca8d",
+    "variables": "#fff"
+}
+```
 
-\!\[feature X\]\(images/feature-x.png\)
+Once you have added your colors you can check out your theme by opening your command palette `CMD/CTRL + SHIFT + P` and running `Generate Theme` This will create the theme files required for your generated theme. You can then select the theme by going to `Preferences: Color Theme` in the command palette and selecting `GeneratedTheme`. You will need to also hit `Reload Window` in the command palette before your changes are avaliable.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Roadmap
 
-## Requirements
+Features that I plan to implement include:
+- Theme Randomizer
+- Proper validation on input colors
+- Better language support
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+**Let me know if there is any feature you want, or bug you need fixed: [Github Repo](https://github.com/Jaredk3nt/VSThemeGenerator)**
