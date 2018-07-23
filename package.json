@@ -1,9 +1,13 @@
 {
     "name": "vsthemegenerator",
     "displayName": "VSThemeGenerator",
-    "description": "Generate custom code themes quick and easy",
-    "version": "0.0.1",
+    "description": "Generate custom syntax themes quick and easy",
+    "version": "1.0.0",
     "publisher": "jaredkent",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Jaredk3nt/VSThemeGenerator"
+    },
     "engines": {
         "vscode": "^1.25.0"
     },
