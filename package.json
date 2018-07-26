@@ -2,7 +2,7 @@
     "name": "vsthemegenerator",
     "displayName": "Theme Generator",
     "description": "Generate custom syntax themes quick and easy",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "publisher": "jaredkent",
     "repository": {
         "type": "git",
