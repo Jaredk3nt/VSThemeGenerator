@@ -24,9 +24,8 @@ const getColors = () => {
             if (colors.hasOwnProperty(key)) {
                 // Validate their input colors
                 const colorRe = /#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})/;
-                if (colorRe.test(colors[key])) {
+                if (!colorRe.test(colors[key])) {
                     colors[key] = defaultColors[key];
-                } else {
                     errorList.push({ scope: key, color: colors[key] });
                 }
             } else {
