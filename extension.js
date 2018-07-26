@@ -1,29 +1,17 @@
 const vscode = require('vscode');
-const fs = require('fs');
-const { generateColorTheme, writeThemetoFile } = require('./src/generator');
+const { generateColorTheme, writeThemetoFile, directorySetup } = require('./src/generator');
 const defaultColors = require('./data/colors.json');
-const pkg = require('./data/generatedThemePackage.json');
 
-
-const directorySetup = () => {
-    fs.mkdir(`${process.env['HOME']}/.vscode/extensions/generatedTheme`, (err) => {
-        if (err) {
-            vscode.window.showErrorMessage('Failed to properly create necessary file structure. VSThemeGenerator Requires $HOME/.vscode/extensions/generatedTheme/themes to exist.')
-            return console.log(err.message);
+const getRandomColors = () => {
+    let colors = {};
+    Object.keys(defaultColors).forEach(key => {
+        if (key === 'background') {
+            colors[key] = `#${Math.floor(Math.random()*5592405).toString(16)}`;
+        } else {
+            colors[key] = `#${Math.floor(Math.random()* (16777215 - 6710886) + 6710886).toString(16)}`;
         }
-        fs.writeFile(`${process.env['HOME']}/.vscode/extensions/generatedTheme/package.json`, JSON.stringify(pkg, null, 4), (err) => {
-            if (err) {
-                vscode.window.showErrorMessage('Failed to properly create necessary file structure. VSThemeGenerator Requires $HOME/.vscode/extensions/generatedTheme/themes to exist.')
-                return console.log(err.message);
-            }
-        });
-        fs.mkdir(`${process.env['HOME']}/.vscode/extensions/generatedTheme/themes`, (err) => {
-            if (err) {
-                vscode.window.showErrorMessage('Failed to properly create necessary file structure. VSThemeGenerator Requires $HOME/.vscode/extensions/generatedTheme/themes to exist.')
-                return console.log(err.message);
-            }
-        });
     });
+    return colors;
 }
 
 const getColors = () => {
@@ -31,17 +19,25 @@ const getColors = () => {
     // If they have colors defined merge with default colors to fill gaps
     if (config.colors) {
         let colors = Object.assign({}, config.colors);
-
+        let errorList = [];
         Object.keys(defaultColors).forEach(key => {
             if (colors.hasOwnProperty(key)) {
-                // validate color fix this to allow for more color types
-                if (colors[key].length !== 7 || colors[key][0] !== "#") {
+                // Validate their input colors
+                const colorRe = /#([0-9a-fA-F]{3}|[0-9a-fA-F]{4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})/;
+                if (colorRe.test(colors[key])) {
                     colors[key] = defaultColors[key];
+                } else {
+                    errorList.push({ scope: key, color: colors[key] });
                 }
             } else {
                 colors[key] = defaultColors[key];
             }
         });
+
+        // Notify user if their colors are invalid
+        if (errorList.length) {
+            vscode.window.showErrorMessage(`Some of your input colors are in an invalid format so the default color has been used instead. Colors must be #RGB, #RGBA, #RRGGBB, #RRGGBBAA. Invalid colors: ${errorList.map(e => ` ${e.scope}: ${e.color}`)}`);
+        }
 
         return colors;
     }
@@ -52,14 +48,21 @@ const generateThemeCmd = () => {
     const colors = getColors();
     const theme = generateColorTheme(colors);
     writeThemetoFile(theme);
-    vscode.window.showInformationMessage('Custom Theme Generated!\nUse by selecting GeneratedTheme from the theme menu and then reloading the window.');
+    vscode.window.showInformationMessage('Custom Theme Generated, use by reloading the VS Code window and then selecting GeneratedTheme from the theme menu.');
+}
+
+const randomThemeCmd = () => {
+    const colors = getRandomColors();
+    const theme = generateColorTheme(colors);
+    writeThemetoFile(theme);
+    vscode.window.showInformationMessage('Random Theme Generated, use by reloading the VS Code window and then selecting GeneratedTheme from the theme menu.');
 }
 
 exports.activate = (context) => {
     directorySetup();
 	let sub = context.subscriptions;
-	sub.push(vscode.commands.registerCommand('extension.generateTheme', generateThemeCmd));
-	//sub.push(vscode.workspace.onDidChangeConfiguration(formatters.configure.bind(formatters)));
+    sub.push(vscode.commands.registerCommand('extension.generateTheme', generateThemeCmd));
+    sub.push(vscode.commands.registerCommand('extension.randomTheme', randomThemeCmd));
 };
 
 exports.deactivate = () => { };

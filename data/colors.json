@@ -13,5 +13,6 @@
     "attributes": "#3fa5c1",
     "properties": "#43baba",
     "builtins": "#b5ca8d",
-    "variables": "#fff"
+    "variables": "#fff",
+    "types": "#3fa5c1"
 }

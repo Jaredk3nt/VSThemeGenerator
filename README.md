@@ -4,6 +4,8 @@ VS Theme Generator allows you to create your perfect VS Code theme without the h
 
 ## Usage
 
+### Generate Custom Theme
+
 Once you have downloaded and installed VSThemeGenerator you will be able to modify your theme by adding the configuration variable `themeGenerator.colors`.
 
 ``` json
@@ -22,17 +24,21 @@ Once you have downloaded and installed VSThemeGenerator you will be able to modi
     "attributes": "#3fa5c1",
     "properties": "#43baba",
     "builtins": "#b5ca8d",
-    "variables": "#fff"
+    "variables": "#fff",
+    "types": "#3fa5c1"
 }
 ```
 
-Once you have added your colors you can check out your theme by opening your command palette `CMD/CTRL + SHIFT + P` and running `Generate Theme` This will create the theme files required for your generated theme. You can then select the theme by going to `Preferences: Color Theme` in the command palette and selecting `GeneratedTheme`. You will need to also hit `Reload Window` in the command palette before your changes are avaliable.
+Once you have added your colors you can check out your theme by opening your command palette `CMD/CTRL + SHIFT + P` and running `Generate Theme` This will create the theme files required for your generated theme. Reload the VS Code window through the command palette: `Reload Window`. You can then select the theme by going to `Preferences: Color Theme` in the command palette and selecting `GeneratedTheme`.
+
+### Random Theme
+
+Through the command palette `CMD/CTRL + SHIFT + P` run `Random Theme`. This will generate a psuedo random color theme (attempts to create some readability by limiting the ranges on certain values). Reload the VS Code window through the command palette: `Reload Window`. You can then select the theme by going to `Preferences: Color Theme` in the command palette and selecting `GeneratedTheme`.
 
 ## Roadmap
 
 Features that I plan to implement include:
-- Theme Randomizer
-- Proper validation on input colors
-- Better language support
+- Continuous improvement to language support
+- Increased customizability on scopes
 
 **Let me know if there is any feature you want, or bug you need fixed: [Github Repo](https://github.com/Jaredk3nt/VSThemeGenerator)**

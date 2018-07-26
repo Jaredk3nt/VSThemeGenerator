@@ -1,6 +1,6 @@
 {
     "name": "vsthemegenerator",
-    "displayName": "VSThemeGenerator",
+    "displayName": "Theme Generator",
     "description": "Generate custom syntax themes quick and easy",
     "version": "1.0.0",
     "publisher": "jaredkent",
@@ -12,10 +12,11 @@
         "vscode": "^1.25.0"
     },
     "categories": [
-        "Other"
+        "Themes"
     ],
     "activationEvents": [
-        "onCommand:extension.generateTheme"
+        "onCommand:extension.generateTheme",
+        "onCommand:extension.randomTheme"
     ],
     "main": "./extension",
     "contributes": {
@@ -23,9 +24,19 @@
             {
                 "command": "extension.generateTheme",
                 "title": "Generate Theme"
+            },
+            {
+                "command": "extension.randomTheme",
+                "title": "Random Theme"
             }
         ]
     },
+    "keywords": [
+        "theme",
+        "theme generator",
+        "custom",
+        "syntax color"
+    ],
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "node ./node_modules/vscode/bin/test"
