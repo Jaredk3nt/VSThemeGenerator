@@ -5,17 +5,17 @@ const scopes = require('../data/scopes.json');
 const pkg = require('../data/generatedThemePackage.json');
 
 
-const writeThemetoFile = (theme) => {
+function writeThemetoFile (theme) {
     fs.writeFile(`${process.env['HOME']}/.vscode/extensions/generatedTheme/themes/generated-color-theme.json` , JSON.stringify(theme, null, 4), (err) => {
         if(err) {
             vscode.window.showErrorMessage('Failed to write theme file.');
             return console.log(err.message);
         }
         console.log(`Custom Theme Generated!`);
-    }); 
+    });
 }
 
-const generateColorTheme = (colors) => {
+function generateColorTheme (colors) {
     let theme = {
         name: "GeneratedTheme",
         colors: {},
@@ -26,7 +26,7 @@ const generateColorTheme = (colors) => {
     const foreground = colors.hasOwnProperty('foreground') ? colors.foreground : "#ffffff";
     const primary = colors.hasOwnProperty('primary') ? colors.primary : foreground;
     const background = colors.hasOwnProperty('background') ? colors.background : "#212121";
-    const backgroundSecondary = colors.hasOwnProperty('backgroundSecondary') ? colors.backgroundSecondary : background;
+    const backgroundSecondary = colors.hasOwnProperty('backgroundSecondary') && colors.backgroundSecondary ? colors.backgroundSecondary : background;
 
     // Setup editor 'colors'
     theme.colors = {
@@ -62,7 +62,7 @@ const generateColorTheme = (colors) => {
     return theme;
 }
 
-const directorySetup = () => {
+function directorySetup() {
     if (!fs.existsSync(`${process.env['HOME']}/.vscode/extensions/generatedTheme/themes`)) {
         console.log('not exists' + `${process.env['HOME']}/.vscode/extensions/generatedTheme/themes`);
         fs.mkdir(`${process.env['HOME']}/.vscode/extensions/generatedTheme`, (err) => {

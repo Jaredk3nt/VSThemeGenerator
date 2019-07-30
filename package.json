@@ -2,7 +2,7 @@
     "name": "vsthemegenerator",
     "displayName": "Theme Generator",
     "description": "Generate custom syntax themes quick and easy",
-    "version": "1.1.2",
+    "version": "2.0.0",
     "publisher": "jaredkent",
     "repository": {
         "type": "git",
@@ -29,7 +29,97 @@
                 "command": "extension.randomTheme",
                 "title": "Random Theme"
             }
-        ]
+        ],
+        "configuration": {
+            "title": "Theme Generator",
+            "type": "object",
+            "properties": {
+                "themeGenerator.foreground": {
+                    "type": "string",
+                    "default": "#fff",
+                    "description": "The main foreground color that takes over when no other color is given."
+                },
+                "themeGenerator.background": {
+                    "type": "string",
+                    "default": "#21282d",
+                    "description": "The background color of the editor"
+                },
+                "themeGenerator.backgroundSecondary": {
+                    "type": "string",
+                    "description": "The background color of the sidebar, defaults to background if not specified"
+                },
+                "themeGenerator.primary": {
+                    "type": "string",
+                    "default": "#327193",
+                    "description": "The primary color of the theme"
+                },
+                "themeGenerator.keywords": {
+                    "type": "string",
+                    "default": "#43baba",
+                    "description": "Color for language keywords"
+                },
+                "themeGenerator.functions": {
+                    "type": "string",
+                    "default": "#3fa5c1",
+                    "description": "Color for function definitions"
+                },
+                "themeGenerator.strings": {
+                    "type": "string",
+                    "default": "#b9ecfa",
+                    "description": "Color for string values"
+                },
+                "themeGenerator.numbers": {
+                    "type": "string",
+                    "default": "#8789c0",
+                    "description": "Color for number values"
+                },
+                "themeGenerator.punctuation": {
+                    "type": "string",
+                    "default": "#494f53",
+                    "description": "Color for punctuation, including: braces, parenthesis, commas, and semicolons"
+                },
+                "themeGenerator.operators": {
+                    "type": "string",
+                    "default": "#327193",
+                    "description": "Color for mathematical and logical operators"
+                },
+                "themeGenerator.comments": {
+                    "type": "string",
+                    "default": "#3d4b54",
+                    "description": "Color for code comments"
+                },
+                "themeGenerator.tags": {
+                    "type": "string",
+                    "default": "#43baba",
+                    "description": "Color for tags like XML and HTML"
+                },
+                "themeGenerator.attributes": {
+                    "type": "string",
+                    "default": "#3fa5c1",
+                    "description": "Color for tag attributes"
+                },
+                "themeGenerator.properties": {
+                    "type": "string",
+                    "default": "#43baba",
+                    "description": "Color for object and tag properties"
+                },
+                "themeGenerator.builtins": {
+                    "type": "string",
+                    "default": "#b5ca8d",
+                    "description": "Color for language builtins"
+                },
+                "themeGenerator.variables": {
+                    "type": "string",
+                    "default": "#fff",
+                    "description": "Color for variable definitions"
+                },
+                "themeGenerator.types": {
+                    "type": "string",
+                    "default": "#3fa5c1",
+                    "description": "Color for type definitions"
+                }
+            }
+        }
     },
     "keywords": [
         "theme",

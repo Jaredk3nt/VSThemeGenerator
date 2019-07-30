@@ -17,8 +17,8 @@ const getRandomColors = () => {
 const getColors = () => {
     let config = vscode.workspace.getConfiguration('themeGenerator');
     // If they have colors defined merge with default colors to fill gaps
-    if (config.colors) {
-        let colors = Object.assign({}, config.colors);
+    if (config) {
+        let colors = Object.assign({}, config);
         let errorList = [];
         Object.keys(defaultColors).forEach(key => {
             if (colors.hasOwnProperty(key)) {
