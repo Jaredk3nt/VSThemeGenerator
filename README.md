@@ -2,6 +2,8 @@
 
 VS Theme Generator allows you to create your perfect VS Code theme without the hassle of having to create your own extension.
 
+<a href="https://www.patreon.com/danggoodcode"><img src="https://img.shields.io/badge/Patreon-Support%20my%20work-orange?style=for-the-badge&logo=patreon"/></a>
+
 ## Usage
 
 ### Generate Custom Theme
