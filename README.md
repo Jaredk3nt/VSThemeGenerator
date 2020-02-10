@@ -40,6 +40,7 @@ Through the command palette `CMD/CTRL + SHIFT + P` run `Random Theme`. This will
 ## Roadmap
 
 Features that I plan to implement include:
+
 - Continuous improvement to language support
 - Increased customizability on scopes
 
